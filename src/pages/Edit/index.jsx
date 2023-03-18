@@ -14,8 +14,8 @@ const Edit = () => {
         }).then((resp) => {
             idchange(resp._id);
             namechange(resp.name);
-            pricechange(resp.email);
-            stockchange(resp.phone);
+            pricechange(resp.price);
+            stockchange(resp.stock);
         }).catch((err) => {
             console.log(err.message);
         })

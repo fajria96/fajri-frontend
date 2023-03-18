@@ -2,10 +2,11 @@ import { Link, useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./index.scss";
 
+
 function Detail() {
   const { empid } = useParams();
 
-  const [empdata, empdatachange] = useState({});
+  const [data, empdatachange] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:5000/products/" + empid)
@@ -27,23 +28,23 @@ function Detail() {
       </Link>
 
       <table className="table">
-        {empdata && (
+        {data && (
           <tbody>
             <tr>
               <td>ID</td>
-              <td>{empdata._id}</td>
+              <td>{empid._id}</td>
             </tr>
             <tr>
               <td>Name</td>
-              <td>{empdata.name}</td>
+              <td>{empid.name}</td>
             </tr>
             <tr>
               <td>Price</td>
-              <td>{empdata.price}</td>
+              <td>{empid.price}</td>
             </tr>
             <tr>
               <td>Stock</td>
-              <td>{empdata.stock}</td>
+              <td>{empid.stock}</td>
             </tr>
           </tbody>
         )}

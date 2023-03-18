@@ -22,9 +22,9 @@ const Home = () => {
     if (window.confirm("Apakah anda yakin ingin menghapus data ini?"))
       try {
         await axios.delete(`http://localhost:5000/products/${id}`);
-        toast.success("Berhasil menghapus data");
         getProducts();
-      } catch (error) {
+        toast.success("Berhasil menghapus data");
+      } catch(error) {
         console.log(error);
       }
   };
@@ -103,7 +103,7 @@ const Home = () => {
                         Edit
                       </Link>
                       <Link
-                        to="#"
+                        to="/"
                         className="btn btn-sm btn-danger"
                         onClick={() => deleteProduct(product._id)}
                       >
